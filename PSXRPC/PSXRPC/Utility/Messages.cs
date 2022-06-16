@@ -6,6 +6,8 @@ namespace PSXRPC
 {
     public abstract class IPSXNetMessage : ISerializable
     {
+        public abstract PSXCommand Type { get; }
+
         public abstract byte[] Serialize();
 
         public abstract int Deserialize(byte[] data);
@@ -24,6 +26,8 @@ namespace PSXRPC
 
     public class SendDataCommand : IPSXNetMessage
     {
+        public override PSXCommand Type => PSXCommand.SendData;
+
         public ulong Address { get; set; }
 
         public ulong Size { get; set; }
@@ -66,16 +70,18 @@ namespace PSXRPC
         }    
     }
 
-    public class ReceiveDataCommand : IPSXNetMessage
+    public class ReadDataCommand : IPSXNetMessage
     {
+        public override PSXCommand Type => PSXCommand.ReceiveData;
+        
         public ulong Address { get; set; }
 
         public ulong Size { get; set; }
 
-        public ReceiveDataCommand()
+        public ReadDataCommand()
         { }
 
-        public ReceiveDataCommand(ulong address, ulong size)
+        public ReadDataCommand(ulong address, ulong size)
         {
             Address = address;
 
@@ -84,17 +90,15 @@ namespace PSXRPC
 
         public override byte[] Serialize()
         {
-            using (MemoryStream stream = new MemoryStream())
+            using MemoryStream stream = new MemoryStream();
+            using (BinaryWriter writer = new BinaryWriter(stream))
             {
-                using (BinaryWriter writer = new BinaryWriter(stream))
-                {
-                    writer.Write(Address);
+                writer.Write(Address);
 
-                    writer.Write(Size);
-                }
-
-                return stream.ToArray();
+                writer.Write(Size);
             }
+
+            return stream.ToArray();
         }
 
         public override int Deserialize(byte[] data)
@@ -110,4 +114,3 @@ namespace PSXRPC
         }
     }
 }
-

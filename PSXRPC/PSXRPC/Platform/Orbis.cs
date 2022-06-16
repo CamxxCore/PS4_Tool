@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ORBIS_RPC
+namespace PSXRPC
 {
     public class Orbis
     {
