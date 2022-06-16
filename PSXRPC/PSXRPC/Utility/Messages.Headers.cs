@@ -6,7 +6,7 @@ namespace PSXRPC
 	[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 	public struct Data
 	{
-		public ulong Address;
+		public long address;
 		public ulong Size;
 	}
 
@@ -20,7 +20,7 @@ namespace PSXRPC
 	[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 	public struct CallFunction
 	{
-		ulong Address;
+		long address;
 		ulong RDI;
 		ulong RSI;
 		ulong RDX;

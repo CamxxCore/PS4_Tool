@@ -24,18 +24,36 @@ namespace PSXRPC
         public int Command;
     }
 
+    public class GetModuleBaseAndSizeCommand : IPSXNetMessage
+    {
+        public override PSXCommand Type => PSXCommand.GetModuleBaseAndSize;
+
+        public GetModuleBaseAndSizeCommand()
+        { }
+
+        public override byte[] Serialize()
+        {
+            return new byte[0];
+        }
+
+        public override int Deserialize(byte[] data)
+        {
+            return 0;
+        }
+    }
+
     public class SendDataCommand : IPSXNetMessage
     {
         public override PSXCommand Type => PSXCommand.SendData;
 
-        public ulong Address { get; set; }
+        public long Address { get; set; }
 
-        public ulong Size { get; set; }
+        public long Size { get; set; }
 
         public SendDataCommand()
         { }
 
-        public SendDataCommand(ulong address, ulong size)
+        public SendDataCommand(long address, long size)
         {
             Address = address;
 
@@ -61,9 +79,9 @@ namespace PSXRPC
         {
             using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
             {
-                Address = reader.ReadUInt64();
+                Address = reader.ReadInt64();
 
-                Size = reader.ReadUInt64();
+                Size = reader.ReadInt64();
             }
 
             return data.Length;
@@ -74,14 +92,14 @@ namespace PSXRPC
     {
         public override PSXCommand Type => PSXCommand.ReceiveData;
         
-        public ulong Address { get; set; }
+        public long Address { get; set; }
 
-        public ulong Size { get; set; }
+        public long Size { get; set; }
 
         public ReadDataCommand()
         { }
 
-        public ReadDataCommand(ulong address, ulong size)
+        public ReadDataCommand(long address, long size)
         {
             Address = address;
 
@@ -105,9 +123,9 @@ namespace PSXRPC
         {
             using (BinaryReader reader = new BinaryReader(new MemoryStream(data)))
             {
-                Address = reader.ReadUInt64();
+                Address = reader.ReadInt64();
 
-                Size = reader.ReadUInt64();
+                Size = reader.ReadInt64();
             }
 
             return data.Length;
