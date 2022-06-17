@@ -5,12 +5,12 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSXRPC", "PSXRPC\PSXRPC.csproj", "{7BF5B27B-F689-438E-84B9-484C5D235906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS4_Tool", "PS4_Tool\PS4_Tool.csproj", "{C849DAD0-0E38-4E9C-BE34-AE6BBBDE6770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PS4_Tool", "PS4_Tool\PS4_Tool.csproj", "{C849DAD0-0E38-4E9C-BE34-AE6BBBDE6770}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7BF5B27B-F689-438E-84B9-484C5D235906} = {7BF5B27B-F689-438E-84B9-484C5D235906}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jekyll.Library.PS4", "..\Jekyll-master\Jekyll.Library\Jekyll.Library.PS4.csproj", "{E19904F3-1795-4D83-996A-75376545A7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jekyll.Library.PS4", "..\Jekyll\Jekyll.Library\Jekyll.Library.PS4.csproj", "{06044EA8-D791-44F2-8529-202629FC88FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,14 +36,14 @@ Global
 		{C849DAD0-0E38-4E9C-BE34-AE6BBBDE6770}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C849DAD0-0E38-4E9C-BE34-AE6BBBDE6770}.Release|x64.ActiveCfg = Release|x64
 		{C849DAD0-0E38-4E9C-BE34-AE6BBBDE6770}.Release|x64.Build.0 = Release|x64
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Debug|x64.Build.0 = Debug|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Release|x64.ActiveCfg = Release|Any CPU
-		{E19904F3-1795-4D83-996A-75376545A7DF}.Release|x64.Build.0 = Release|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Debug|x64.Build.0 = Debug|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Release|x64.ActiveCfg = Release|Any CPU
+		{06044EA8-D791-44F2-8529-202629FC88FC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

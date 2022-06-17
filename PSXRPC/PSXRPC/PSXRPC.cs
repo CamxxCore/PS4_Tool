@@ -116,7 +116,7 @@ namespace PSXRPC
             return BitConverter.ToInt32(bytes);
         }
 
-        public uint ReadUInt(long address)
+        public uint ReadUInt32(long address)
         {
             var bytes = ReadBytes(address, sizeof(uint));
 

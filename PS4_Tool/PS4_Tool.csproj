@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Jekyll-master\Jekyll.Library\Jekyll.Library.PS4.csproj" />
+	  <ProjectReference Include="..\..\Jekyll\Jekyll.Library\Jekyll.Library.PS4.csproj" />
 	  <ProjectReference Include="..\PSXRPC\PSXRPC.csproj" />
 	</ItemGroup>
 
